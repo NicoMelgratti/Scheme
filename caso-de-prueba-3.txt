@@ -1,0 +1,31 @@
+(define agenda-semanal3
+  '((lunes)
+    (martes ("Antoni Kross" 11 11.5) ("Sofia Pitchai" 16 17))
+    (miercoles)
+    (jueves("Francisco Perez" 10 10.5) ("Mariano López" 11 12))
+    (viernes("José Álvarez" 11 12) ("Fernanda Martínez" 14 15))))
+
+;Ejercicio 1
+> (buscar-horario agenda-semanal2 'estandar 'miercoles)
+8
+
+;Ejercicio 2
+> (inserta-turno agenda-semanal3 "Nicolas Melgratti" 'complejo 'martes 11)
+
+turno-no-disponible
+
+;Ejercicio 3
+> (lista-huecos agenda-semanal2)
+((lunes (8.5 9) (9.5 12) (14 17))
+ (martes (8.5 9) (9.5 12) (14 17))
+ (miercoles (8 9) (10.5 11) (14.5 15) (16.5 17))
+ (jueves (8 12) (14 17))
+ (viernes (8 12) (14 17)))
+
+;Ejercicio 4
+> (reagendar-dia agenda-semanal3 'martes)
+((lunes ("Antoni Kross" 8 8.5) ("Sofia Pitchai" 8.5 9.5))
+ (martes)
+ (miercoles)
+ (jueves ("Francisco Perez" 10 10.5) ("Mariano López" 11 12))
+ (viernes ("José Álvarez" 11 12) ("Fernanda Martínez" 14 15)))

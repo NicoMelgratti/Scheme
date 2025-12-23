@@ -1,0 +1,41 @@
+(define agenda-semanal
+'((lunes ("Francisco Perez" 8 8.5) ("Mariano López" 9 9.5))
+(martes ("José Álvarez" 10 11) ("Fernanda Martínez" 11 12))
+(miercoles) (jueves) (viernes)))
+
+
+;Ejercicio 1
+
+> (buscar-horario agenda-semanal 'estandar 'lunes)
+8.5
+
+;Ejercicio 2
+> (inserta-turno agenda-semanal "Horacio Rotela" 'estandar 'lunes 8.5)
+
+((lunes ("Francisco Perez" 8 8.5) ("Horacio Rotela" 8.5 9.0) ("Mariano López" 9 9.5))
+ (martes ("José Álvarez" 10 11) ("Fernanda Martínez" 11 12))
+ (miercoles)
+ (jueves)
+ (viernes))
+
+;Ejercicio 3
+> (lista-huecos agenda-semanal)
+
+((lunes (8.5 9) (9.5 12) (14 17))
+ (martes (8 10) (14 17))
+ (miercoles (8 12) (14 17))
+ (jueves (8 12) (14 17))
+ (viernes (8 12) (14 17)))
+
+;Ejercicio 4
+> (reagendar-dia agenda-semanal 'lunes)
+
+((lunes)
+ (martes
+  ("Francisco Perez" 8 8.5)
+  ("Mariano López" 8.5 9.0)
+  ("José Álvarez" 10 11)
+  ("Fernanda Martínez" 11 12))
+ (miercoles)
+ (jueves)
+ (viernes))

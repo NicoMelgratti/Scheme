@@ -1,0 +1,46 @@
+(define agenda-semanal2
+  '((lunes ("Francisco Soltermann" 8 8.5) ("Antonio Bortoli" 9 9.5))
+    (martes ("Nicolas Melgratti" 8 8.5) ("Fernanda Martínez" 9 9.5))
+    (miercoles ("Nicolas Melgratti" 9 10)("Antonio Bortoli" 10 10.5) ("Fidel Castro" 11 11.5) ("Jose Cammisi" 14 14.5)("Richard Argona" 15 15.5)("Javier Milei" 15.5 16)("Justin Biber" 16 16.5))
+    (jueves)
+    (viernes)
+    )
+  )
+
+;Ejercicio 1
+> (buscar-horario agenda-semanal 'complejo 'martes)
+9.5
+
+;Ejercicio 2
+> (inserta-turno agenda-semanal3 "Nicolas Melgratti" 'complejo 'lunes 8.5)
+((lunes ("Nicolas Melgratti" 8.5 9.5))
+ (martes ("Antoni Kross" 11 11.5) ("Sofia Pitchai" 16 17))
+ (miercoles)
+ (jueves ("Francisco Perez" 10 10.5) ("Mariano López" 11 12))
+ (viernes ("José Álvarez" 11 12) ("Fernanda Martínez" 14 15)))
+
+
+;Ejercicio 3
+> (lista-huecos agenda-semanal3)
+((lunes (8 12) (14 17))
+ (martes (8 11) (14 16))
+ (miercoles (8 12) (14 17))
+ (jueves (8 10) (10.5 11) (14 17))
+ (viernes (8 11) (15 17)))
+
+;Ejercicio 4
+>  (reagendar-dia agenda-semanal2 'miercoles)
+((lunes
+  ("Francisco Soltermann" 8 8.5)
+  ("Antonio Bortoli" 8.5 9.0)
+  ("Antonio Bortoli" 9 9.5)
+  ("Nicolas Melgratti" 9.5 10.5)
+  ("Fidel Castro" 10.5 11.0)
+  ("Jose Cammisi" 11 11.5)
+  ("Richard Argona" 11.5 12.0)
+  ("Javier Milei" 12 12.5)
+  ("Justin Biber" 14 14.5))
+ (martes ("Nicolas Melgratti" 8 8.5) ("Fernanda Martínez" 9 9.5))
+ (miercoles)
+ (jueves)
+ (viernes))
